@@ -1,0 +1,226 @@
+/* Variables */
+:root {
+  --font-family: "Roboto", sans-serf;
+  --normal-font: 400;
+  --bold-font: 700;
+  --bolder-font: 900;
+  --bg-color: #fcfcfc;
+  --primary-color: aliceblue;
+  --secondary-color: #000000;
+  --primary-shadow: #8b8eaf;
+  --secondary-shadow: #a17a69;
+  --bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 1.7rem;
+  --transition: 0.3s;
+  /* my variables */
+  --tertiary-color: #bad9ff;
+  --vertical-margin: 80px;
+}
+/* Variables end */
+
+/* CSS Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(41, 39, 39);
+    color: var(--primary-color);
+}
+
+a:link, a:visited {
+    background-color: var(--primary-color);
+    color: black;
+    padding: 7px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+a:hover, a:active {
+    background-color: var(--tertiary-color);
+    cursor: pointer;
+}
+
+#photo {
+    width: 300px;
+}
+
+#photoNameTitle{
+    display: flex;
+    margin-bottom: var(--vertical-margin);
+}
+
+#nameTitle {
+    font-size: 3rem;
+    font-weight: var(--bolder-font);
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#title {
+    padding-left: 50px;
+}
+#aboutInfo {
+    width: 500px;
+    font-size: 18px;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--vertical-margin);
+}
+
+#about div {
+    margin-bottom: 15px;
+}
+
+#techIcons img {
+    margin: 15px 15px 0px;
+}
+
+#techIcons > img {
+    width: 50px;
+}
+
+.project {
+    display: flex;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--vertical-margin);
+}
+
+.projectDescription {
+    width: 500px;
+}
+
+#projects div {
+    margin: 10px;
+}
+
+.sectionTitle {
+    font-weight: var(--bolder-font);
+    font-size: 2.25rem;
+}
+
+.projectTitle {
+    font-weight: var(--bold-font);
+    font-size: 1.5rem;
+}
+
+/* Animations */
+
+#nameTitle div div {
+    animation-duration: 1.5s;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+#nameTitle div div:nth-child(1) {
+    animation-name: slideInFromLeft;
+}
+
+#nameTitle div div:nth-child(2) {
+    animation-name: slideInFromRight;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-500px);
+    }
+
+    89% {
+        transform: translateX(50px);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(500px);
+    }
+
+    90% {
+        transform: translateX(-50px);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* contact section */
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: var(--bottom-margin-2);
+}
+
+.contact-form-container {
+    max-width: 40.75rem;
+    margin: 0 auto;
+    padding: 0.938rem;
+}
+
+.contact-form-container label {
+    line-height: 2.7em;
+    font-weight: var(--bold-font);
+    color: var(--primary-color);
+}
+
+.contact-form-container textarea {
+    min-height: 6.25rem;
+    font-size: 14px;
+}
+
+.contact-form-container .input-field {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 1rem;
+    border-radius: 5px;
+    font-size: 0.875rem;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: var(--bold-font);
+    transition: var(--transition);
+    border: none;
+}
+
+.submit-btn:hover {
+    background-color: var(--tertiary-color);
+    cursor: pointer;
+}

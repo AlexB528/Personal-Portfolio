@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="photoNameTitle">
+        <img id="photo" src="./assets/images/2023-06-06 - Self-Portrait.jpg" alt="Portrait of Alexander Brik">
+        <div id="nameTitle">
+            <div>
+                <div>Alexander Brik</div>
+                <div id="title">Full Stack Developer</div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="sectionTitle">
+            About
+        </div>
+        <div id="aboutInfo">
+            I'm a full stack developer with a background in accounting. I've built a porfolio of projects to showcase my skills. My main project
+            is a tool that can be used to inform investment decisions. Users can assign importance to financial ratios and rank investments based
+            on how well they score.
+        </div>
+        <div id="techIcons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original-wordmark.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original-wordmark.svg" />
+        </div>
+    </section>
+    <section id="projects">
+        <div class="sectionTitle">
+            Projects
+        </div>
+        <div class="project">
+            <div class="projectDescription">
+                <div class="projectTitle">Etch-A-Sketch</div>
+                <div>Webiste that allows users to draw pictures in the style of an Etch-A-Sketch. Users can change resolution, opacity, and color.</div>
+                <a href="https://alexb528.github.io/Etch-a-Sketch/" target="_blank">Live Site</a>
+                <a href="https://github.com/AlexB528/Etch-a-Sketch" target="_blank">Repository</a>
+
+            </div>
+            <img src="./assets/gifs/etchASketch.gif" alt="gif preview of Etch-A-Sketch Project">
+        </div>
+        <div class="project">
+            <img src="./assets/gifs/toDoMovie.gif" alt="gif preview of Etch-A-Sketch Project">
+            <div class="projectDescription">
+                <div class="projectTitle">Planner website</div>
+                <div>Users can add projects. Tasks can then be added to a project. The calendar on the side can be expanded from weekly to monthly in order to see upcoming due dates.</div>
+                <a href="https://alexb528.github.io/To-Do-List/" target="_blank">Live Site</a>
+                <a href="https://github.com/AlexB528/To-Do-List" target="_blank">Repository</a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="projectDescription">
+                <div class="projectTitle">CV Generator</div>
+                <div>Users can enter informatoin about themselves and have it formatted as a resume. Resume's can be downloaded as pdf or word files.</div>
+                <a href="https://alexb528.github.io/CV-Generator/" target="_blank">Live Site</a>
+                <a href="https://github.com/AlexB528/CV-Generator" target="_blank">Repository</a>
+            </div>
+            <img src="./assets/gifs/cvGeneratorVideo.gif" alt="gif preview of Etch-A-Sketch Project">
+        </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="sectionTitle">Get In Touch With Me</div>
+      <div class="contact-form-container">
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xoqovjdz" method="POST">
+            <div class="form-control">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="sender-name"
+                placeholder="Enter Your Name"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="sender-email"
+                placeholder="Enter Your Email"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                cols="60"
+                rows="10"
+                placeholder="Enter Your Message"
+                name="message"
+                class="input-field"
+                required
+              ></textarea>
+            </div>
+            <div class="form-control">
+                <input
+                  type="submit"
+                  value="Submit"
+                  id="submit-btn"
+                  class="submit-btn"
+                />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+</body>
+</html>
+
+
+
