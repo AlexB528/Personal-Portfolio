@@ -6,16 +6,20 @@
   --bolder-font: 900;
   --bg-color: #fcfcfc;
   --primary-color: aliceblue;
-  --secondary-color: #000000;
+  --secondary-color: rgb(41, 39, 39);
+  --transparent-secondary-color: rgba(41, 39, 39, 0.5);
   --primary-shadow: #8b8eaf;
   --secondary-shadow: #a17a69;
-  --bottom-margin: 0.5rem;
-  --bottom-margin-2: 1rem;
+  --bottom-margin: 1rem;
+  --bottom-margin-2: 2rem;
+  --bottom-margin-3: 4rem;
   --line-height: 1.7rem;
   --transition: 0.3s;
   /* my variables */
   --tertiary-color: #bad9ff;
   --vertical-margin: 80px;
+  --height-of-projects: 300px;
+  --width-of-project-description: 40%;
 }
 /* Variables end */
 
@@ -31,8 +35,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(41, 39, 39);
+    background-color: var(--secondary-color);
     color: var(--primary-color);
+}
+
+section {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: var(--bottom-margin-3);
+}
+
+.sectionTitle {
+    font-size: 3rem;
+    font-weight: var(--bolder-font);
+    margin-bottom: var(--bottom-margin-2);
 }
 
 a:link, a:visited {
@@ -44,6 +62,7 @@ a:link, a:visited {
     display: inline-block;
     border-radius: 10px;
     transition: var(--transition);
+    margin: 5px;
 }
 
 a:hover, a:active {
@@ -52,18 +71,18 @@ a:hover, a:active {
 }
 
 #photo {
-    width: 300px;
+    max-width: 300px;
+    min-width: 100px;
 }
 
-#photoNameTitle{
-    display: flex;
+/* #photoNameTitle{
     margin-bottom: var(--vertical-margin);
-}
+} */
 
 #nameTitle {
-    font-size: 3rem;
+    font-size: 3.25rem;
     font-weight: var(--bolder-font);
-    width: 600px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,20 +92,15 @@ a:hover, a:active {
 #title {
     padding-left: 50px;
 }
+
 #aboutInfo {
-    width: 500px;
+    max-width: 600px;
     font-size: 18px;
 }
 
 #about {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: var(--vertical-margin);
-}
-
-#about div {
-    margin-bottom: 15px;
 }
 
 #techIcons img {
@@ -97,33 +111,57 @@ a:hover, a:active {
     width: 50px;
 }
 
-.project {
-    display: flex;
-}
-
 #projects {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: var(--vertical-margin);
+}
+
+.project {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+.flexContainer {
+    display: flex;
+    position: absolute;
+    width: 100%;
+}
+
+.rightAlign {
+    justify-content: end;
+    position: absolute;
+}
+
+.leftAlign {
+    justify-content: start;
+}
+
+.projectDescriptionContainer {
+    position: relative;
+    min-height: var(--height-of-projects);
 }
 
 .projectDescription {
-    width: 500px;
-}
-
-#projects div {
-    margin: 10px;
-}
-
-.sectionTitle {
-    font-weight: var(--bolder-font);
-    font-size: 2.25rem;
+    background-color: var(--transparent-secondary-color);
+    width: var(--width-of-project-description);
+    z-index: 2;
+    padding: 10px;
 }
 
 .projectTitle {
+    font-size: 2rem;
     font-weight: var(--bold-font);
-    font-size: 1.5rem;
+}
+
+.flexContainer img {
+    width: auto;
+    height: var(--height-of-projects);
+}
+
+.spacer {
+    height: var(--height-of-projects);
 }
 
 /* Animations */
@@ -174,15 +212,19 @@ a:hover, a:active {
 
 /* contact section */
 
-#contact h2 {
-    text-align: center;
-    margin-bottom: var(--bottom-margin-2);
+#contact {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
+#contact .sectionTitle {
+    margin-bottom: var(--bottom-margin);
 }
 
 .contact-form-container {
     max-width: 40.75rem;
     margin: 0 auto;
-    padding: 0.938rem;
 }
 
 .contact-form-container label {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .master {
+          position: relative;
+        }
+        .imageContainer {
+            position: absolute;
+            top: 0;
+            display: flex;
+        }
+
+        .leftAlign {
+            justify-content: start;
+            z-index: 1;
+        }
+
+        .rightAlign {
+            justify-content: end;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="master">
+        <div class="imageContainer leftAlign">
+            <img src="https://wallpapercave.com/wp/wp5609975.jpg" alt="img 1">
+        </div>
+        <div class="imageContainer rightAlign">
+            <img src="https://wallpapercave.com/wp/wp5609502.jpg" alt="img 2">
+        </div>
+    </div>
+</body>
+</html>
+
+    <!-- <div class="imageContainer rightAlign">
+        <img src="https://wallpapercave.com/wp/wp5609502.jpg" alt="img 2">
+    </div> -->
