@@ -103,11 +103,15 @@ a:hover, a:active {
     align-items: center;
 }
 
-#techIcons img {
-    margin: 15px 15px 0px;
+#techIcons {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    justify-content: center;
 }
 
-#techIcons > img {
+#techIcons img {
+    margin: 15px 15px 0px;
     width: 50px;
 }
 
@@ -225,6 +229,7 @@ a:hover, a:active {
 .contact-form-container {
     max-width: 40.75rem;
     margin: 0 auto;
+    padding: 0px 10px;
 }
 
 .contact-form-container label {
