@@ -8,15 +8,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <section id="photoNameTitle">
-        <img id="photo" src="./assets/images/2023-06-06 - Self-Portrait.jpg" alt="Portrait of Alexander Brik">
-        <div id="nameTitle" class="sectionTitle">
-            <div>
-                <div>Alexander Brik</div>
-                <div id="title">Full Stack Developer</div>
-            </div>
+    <nav id="navBar">
+        <a href="#nameTitle" class="nav-Title">Alexander Brik</a>
+        <ul class="navigation">
+          <li><a href="#nameTitle" class="nav-link-right-side">Home</a></li>
+          <li><a href="#about" class="nav-link-right-side">About</a></li>
+          <li><a href="#projects" class="nav-link-right-side">Projects</a></li>
+          <li><a href="#contact" class="nav-link-right-side">Contact</a></li>
+        </ul>
+        <button class="burger-menu" id="burger-menu">
+          <ion-icon class="bars" name="menu-outline"></ion-icon>
+        </button>
+    </nav>
+    <section id="nameTitle">
+        <div class="nameTitleContainer">
+          <div id="name">Alexander Brik</div>
+          <div id="title">Full Stack Developer</div>
         </div>
     </section>
     <section id="about">
