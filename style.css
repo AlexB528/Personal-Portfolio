@@ -227,6 +227,7 @@ nav ul li {
 
 .flexContainer img {
     width: auto;
+    max-width: 96vw;
     height: var(--height-of-projects);
 }
 
@@ -415,8 +416,14 @@ footer {
         font-size: 3rem;
     }
 
-    #title {
+    #title, #titleTwo {
         font-size: 4rem;
+    }
+
+    section {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        width: 96vw;
     }
     
 }
