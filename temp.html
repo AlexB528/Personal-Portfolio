@@ -1,47 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Title of the document</title>
-  </head>
-  <body>
-    <h1 style="color:green">GeeksForGeeks</h1>
-    <section>
-      <h2>GeeksForGeeks </h2>
-      <ul>
-        <li>Machine learning</li>
-        <li>DSA</li>
-        <li>Competitive programming</li>
-        <li>Web-Development</li>
-        <li>Java</li>
-      </ul>
-    </section>
-    <section>
-      <h3>Books</h3>
-       
- 
-<p>Learn Machine learning</p>
- 
- 
-       
- 
-<p>Learn DSA</p>
- 
- 
-       
- 
-<p>Learn Competitive programming</p>
- 
- 
-       
- 
-<p>Learn Web-Development</p>
- 
- 
-       
- 
-<p>Learn Java</p>
- 
- 
-    </section>
-  </body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-rows: 1fr auto; /* First row takes 1 fraction of available space, second row auto-adjusts */
+      grid-template-columns: 1fr 1fr; /* Two equal-width columns for the second row */
+      height: 100vh; /* Set the grid container to cover the full viewport height */
+    }
+
+    .grid-item {
+      border: 1px solid #ccc;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Set the first column of the second row to be an eighth of the total width */
+    .grid-item:nth-child(odd) {
+      grid-column: span 1;
+    }
+
+    /* Set the second column of the second row to be seven-eighths of the total width */
+    .grid-item:nth-child(even) {
+      grid-column: span 7;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-item">First Row, First Column (1/1)</div>
+    <div class="grid-item">Second Row

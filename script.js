@@ -25,3 +25,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Update the active link on scroll
 window.addEventListener('scroll', updateActiveLink);
+
+// Nav hamburgerburger selections
+
+const burger = document.querySelector("#burger-menu");
+const ul = document.querySelector("nav ul");
+const nav = document.querySelector("nav");
+
+burger.addEventListener("click", () => {
+  if (ul.classList.contains('burgerExpand')) {
+    ul.classList.add('burgerCollapse');
+    ul.classList.remove('burgerExpand');
+  } else {
+    ul.classList.add('burgerExpand');
+    ul.classList.remove('burgerCollapse');
+  } 
+});
+
+// Close hamburger menu when a link is clicked
+
+// Select nav links
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach((link) =>
+  link.addEventListener("click", () => {
+    ul.classList.remove("show");
+  })
+);
+
+// remove burgerExpand and burger Collapse when window resizes
+
+let minWidth720 = window.matchMedia("(min-width: 720px)");
+
+function match() {
+    if (minWidth720.matches) {
+      ul.classList.remove('burgerExpand');
+      ul.classList.remove('burgerCollapse');
+    }
+}
+
+minWidth720.addEventListener('change',match);

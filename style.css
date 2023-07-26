@@ -13,6 +13,7 @@
   --bottom-margin-3: 300px;
   --line-height: 1.7rem;
   --transition: 0.3s;
+  --transition-longer: 0.6s ease-in;
   /* my variables */
   --tertiary-color: #bad9ff;
   --vertical-margin: 80px;
@@ -28,6 +29,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -45,8 +47,8 @@ section {
     /* justify-content: center; */
     gap: 1rem;
     padding-bottom: var(--bottom-margin-3);
-    /* padding-top: calc(var(--nav-bar-height)*1.5); */
-    min-height: calc(100vh - var(--nav-bar-height));
+    padding-top: calc(var(--nav-bar-height)*2);
+    min-height: calc(100vh - var(--nav-bar-height)*2);
 }
 
 .sectionTitle {
@@ -132,6 +134,7 @@ nav ul li {
 
 .burger-menu {
   color: var(--primary-color);
+  width: 35px;
   font-size: 2rem;
   border: 0;
   background-color: transparent;
@@ -142,26 +145,15 @@ nav ul li {
 /* navbar end */
 
 #nameTitle {
-    /* margin-top: 50px; */
+    flex-direction: column;
     font-size: 5rem;
     font-weight: var(--bolder-font);
     justify-content: center;
     align-items: center;
-    padding-bottom: 200px;
-    /* max-width: 800px; */
+    padding-bottom: var(--bottom-margin-3)
 }
 
-.nameTitleContainer div {
-    color: var(--primary-color);
-}
-
-.nameTitleContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-#title {
-    padding-left: 70px;
+#title, #titleTwo {
     color: var(--secondary-color);
     text-shadow: -1px -1px 0 var(--primary-color), 1px -1px 0 var(--primary-color), -1px 1px 0 var(--primary-color), 1px 1px 0 var(--primary-color);
     font-size: 6rem;
@@ -175,7 +167,6 @@ nav ul li {
 #about {
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
 }
 
 #techIcons {
@@ -241,18 +232,23 @@ nav ul li {
 
 /* Animations */
 
-#nameTitle div div {
+#nameTitle div{
     animation-duration: 1.5s;
     animation-delay: 100ms;
     animation-fill-mode: forwards;
     opacity: 0;
 }
-#nameTitle div div:nth-child(1) {
+
+#name {
     animation-name: slideInFromLeft;
 }
 
-#nameTitle div div:nth-child(2) {
+#title {
     animation-name: slideInFromRight;
+}
+
+#titleTwo {
+    animation-name: slideInFromLeft;
 }
 
 @keyframes slideInFromLeft {
@@ -290,7 +286,6 @@ nav ul li {
 #contact {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 0px;
     padding-bottom: 0px;
 }
@@ -345,3 +340,85 @@ nav ul li {
     cursor: pointer;
 }
 
+/* contact section end */
+
+/* social */
+
+#socials img {
+    width: 50px;
+}
+
+#socials a {
+    background-color: transparent;
+}
+
+#socials svg {
+    color: var(--primary-color);
+    width: 50px;
+}
+
+/* social end */
+
+
+/* footer */
+
+footer {
+  background-color: var(--bg-color);
+  padding: 1.25rem;
+  text-align: center;
+  margin: 2rem 0 0;
+}
+
+/* footer end */
+
+/* tablets and mobile phones */
+
+@media screen and (max-width: 720px) {
+    nav {
+        padding: 1.5rem 1rem;
+    }
+
+    nav ul {
+        position: fixed;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        top: 86px;
+        left: 10%;
+        width: 80%;
+        text-align: center;
+        transform: translateY(-120%);
+        opacity: 0;
+        /* transition: transform 0.5s ease-in; */
+    }
+
+    nav ul li {
+        margin: 8px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    nav ul.burgerExpand {
+        opacity: 100;
+        transform: translateY(0);
+        transition: var(--transition-longer);
+    }
+
+    nav ul.burgerCollapse {
+        /* opacity: 0; */
+        transform: translateY(-120%);
+        transition: var(--transition-longer);
+    }
+
+    #nameTitle {
+        font-size: 3rem;
+    }
+
+    #title {
+        font-size: 4rem;
+    }
+    
+}
+
+/* tablets and mobile phones end */
