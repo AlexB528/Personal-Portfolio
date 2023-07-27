@@ -1,5 +1,5 @@
 // Get all the anchor tags in the navbar
-const navLinks = document.querySelectorAll('.nav-link-right-side');
+const navLinks = document.querySelectorAll('.nav-link');
 
 // Function to update the active link based on the scroll position
 function updateActiveLink() {
@@ -26,11 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Update the active link on scroll
 window.addEventListener('scroll', updateActiveLink);
 
-// Nav hamburgerburger selections
+
+
+// Nav hamburgerburger selections (after July 27)
 
 const burger = document.querySelector("#burger-menu");
 const ul = document.querySelector("nav ul");
-const nav = document.querySelector("nav");
 
 burger.addEventListener("click", () => {
   if (ul.classList.contains('burgerExpand')) {
@@ -41,17 +42,6 @@ burger.addEventListener("click", () => {
     ul.classList.remove('burgerCollapse');
   } 
 });
-
-// Close hamburger menu when a link is clicked
-
-// Select nav links
-const navLink = document.querySelectorAll(".nav-link");
-
-navLink.forEach((link) =>
-  link.addEventListener("click", () => {
-    ul.classList.remove("show");
-  })
-);
 
 // remove burgerExpand and burger Collapse when window resizes
 
@@ -65,3 +55,13 @@ function match() {
 }
 
 minWidth720.addEventListener('change',match);
+
+// Close hamburger menu when a link is clicked
+
+navLinks.forEach((link) =>
+  link.addEventListener("click", () => {
+    ul.classList.add('burgerCollapse');
+    ul.classList.remove('burgerExpand');
+    setTimeout(ul.classList.remove('burgerCollapse'),501)
+  })
+);

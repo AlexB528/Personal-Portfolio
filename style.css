@@ -5,7 +5,7 @@
   --bolder-font: 900;
   --primary-color: aliceblue;
   --secondary-color: rgb(41, 39, 39);
-  --transparent-secondary-color: rgba(41, 39, 39, 0.5);
+  --transparent-secondary-color: #575757b6;
   --primary-shadow: #8b8eaf;
   --secondary-shadow: #a17a69;
   --bottom-margin: 1rem;
@@ -21,6 +21,7 @@
   --width-of-project-description: 40%;
   --nav-bg-color: rgb(66, 64, 71);
   --nav-bar-height: 55px;
+  --width-for-tablets-and-phones: 96vw;
 }
 /* Variables end */
 
@@ -76,9 +77,16 @@ a:hover, a:active {
 
 /* navbar */
 
+#menuContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: calc(var(--nav-bar-height)*0.15);
+}
+
 nav a:link, nav a:visited {
     transition: var(--transition);
-    background-color: var(--nav-bg-color);
+    background-color: transparent;
     color: var(--primary-color);
 }
 
@@ -87,7 +95,6 @@ nav a.viewed {
 }
 
 nav a:hover, nav a:active {
-    background-color: var(--nav-bg-color);
     color: rgb(247, 162, 5);
     cursor: pointer;
 }
@@ -134,13 +141,17 @@ nav ul li {
 
 .burger-menu {
   color: var(--primary-color);
-  width: 35px;
+  width: 55px;
   font-size: 2rem;
   border: 0;
   background-color: transparent;
   cursor: pointer;
   display: none;
+  margin-left: auto;
+  padding-right: 20px;
 }
+
+
 
 /* navbar end */
 
@@ -227,7 +238,6 @@ nav ul li {
 
 .flexContainer img {
     width: auto;
-    max-width: 96vw;
     height: var(--height-of-projects);
 }
 
@@ -281,6 +291,36 @@ nav ul li {
         opacity: 1;
     }
 }
+
+@keyframes expand {
+  0% {
+    transform: scaleY(0);
+  }
+
+  70% {
+    transform: scaleY(1.1);
+  }
+  
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes collapseAAA {
+  0% {
+    transform: scaleY(1);
+  }
+
+  20% {
+    transform: scaleY(1.1);
+  }
+  
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+
 
 /* contact section */
 
@@ -358,6 +398,14 @@ nav ul li {
     width: 50px;
 }
 
+#socials img, svg {
+    transition-property: scale;
+    transition-duration: var(--transition);
+}
+#socials img:hover , svg:hover {
+    scale: 1.1;
+}
+
 /* social end */
 
 
@@ -380,16 +428,8 @@ footer {
     }
 
     nav ul {
-        position: fixed;
-        background-color: var(--bg-color);
-        flex-direction: column;
-        top: 86px;
-        left: 10%;
-        width: 80%;
-        text-align: center;
-        transform: translateY(-120%);
-        opacity: 0;
-        /* transition: transform 0.5s ease-in; */
+        display: none;
+        background-color: var(--nav-bg-color);
     }
 
     nav ul li {
@@ -401,15 +441,16 @@ footer {
     }
 
     nav ul.burgerExpand {
-        opacity: 100;
-        transform: translateY(0);
-        transition: var(--transition-longer);
+        display: block;
+        animation: expand 500ms ease-in-out;
+        transform-origin: top;
     }
 
     nav ul.burgerCollapse {
-        /* opacity: 0; */
-        transform: translateY(-120%);
-        transition: var(--transition-longer);
+        display: block;
+        animation: collapseAAA 500ms ease-in-out;
+        transform-origin: top;
+        animation-fill-mode: forwards;
     }
 
     #nameTitle {
@@ -423,9 +464,14 @@ footer {
     section {
         margin-left: 2vw;
         margin-right: 2vw;
-        width: 96vw;
+        width: var(--width-for-tablets-and-phones)
     }
-    
+
 }
 
+@media screen and (max-width: 544px) {
+    :root {
+        --height-of-projects: calc(var(--width-for-tablets-and-phones)/1.78);
+    }
+}
 /* tablets and mobile phones end */
