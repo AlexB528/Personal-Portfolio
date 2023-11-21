@@ -4,19 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blogStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200&display=swap" rel="stylesheet">
     <script src="blogScript.js" defer></script>
 </head>
 <body>
-    <div>
-        This is my blog page
-    </div>
-    <div>
-        <h1>Posts</h1>
-        <div id="posts"></div>
-    </div>
+    <nav id="navBar">
+        <a href="blog.html" class="nav-Title">Alexander Brik's Blog</a>
+        <div id="menuContainer">
+          <ul class="navigation">
+            <li><a href="blog.html" class="nav-link">Home</a></li>
+            <li><a href="index.html" class="nav-link">Alexander Brik's Personal Website</a></li>
+            <li id="signInContainer">
+              <div class="nav-button nav-link" id="nav-sign-in-button">
+                Sign In
+              </div>
+              <div class="dropdown-content" id="nav-sign-in-button-dropdown-content">
+                <form action="" class="userForm" id="userForm">
+                    <label for="first_name">First name</label>
+                    <input name="first_name" type="text" value="">
+                    <label for="family_name">Family name</label>
+                    <input name="family_name" type="text" value="">
+                    <label for="username">Username</label>
+                    <input name="username" placeholder="username" type="text" value="">
+                    <label for="password">Password</label>
+                    <input name="password" type="password">
+                    <label for="password_confirmation">Confirm Password</label>
+                    <input name="password_confirmation" type="password">
+                    <input type="submit" value="Sign In" id="btnSubmitNewUser">
+                </form>
+              </div>
+            </li>
+            <li id="logInContainer">
+              <div class="nav-button nav-link" id="nav-log-in-button">
+                Log in
+              </div>
+              <div class="dropdown-content" id="nav-log-in-button-dropdown-content">
+                <form action="" class="userForm" id="loginForm">
+                  <label for="username">Username</label>
+                  <input name="username" placeholder="username" type="text">
+                  <label for="password">Password</label>
+                  <input name="password" type="password">
+                  <button>Log In</button>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <section id="posts">
+      <ul id="postList"></ul>
+    </section>
 </body>
 </html>
